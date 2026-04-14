@@ -1,0 +1,213 @@
+/* 1. IMPORTACIÓN DE FUENTE (Inter es muy cercana a la tipografía de Stripe) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. VARIABLES DE COLOR STRIPE */
+:root {
+    --stripe-purple: #635BFF;
+    --stripe-purple-hover: #5851f5;
+    --stripe-text-dark: #1a1f36;
+    --stripe-text-subtle: #4f566b;
+    --stripe-border: #e3e8ee;
+    --stripe-bg-light: #f7fafc;
+    --stripe-white: #ffffff;
+    --stripe-success: #24b47e;
+    --stripe-shadow: 0 7px 14px 0 rgba(60, 66, 87, 0.08), 0 3px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* 3. TIPOGRAFÍA GLOBAL */
+.main,
+.spectrum-Card-container,
+.links,
+.spectrum-Button,
+.spectrum-Heading,
+#side-panel-container,
+.spectrum-FieldLabel,
+.spectrum-Textfield-input,
+body,
+.spectrum-Form-item {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    color: var(--stripe-text-dark);
+}
+
+div[data-name="titulo"] {
+    color: var(--stripe-purple);
+    font-weight: 700;
+}
+
+div[data-name*="negrita"] {
+    font-weight: 600;
+}
+
+div[data-name*="xs"]>div {
+    font-size: 0.85em !important;
+    color: var(--stripe-text-subtle);
+}
+
+div[data-name*="center"],
+div[data-name*="center"]>div {
+    text-align: center;
+}
+
+/* 4. ELIMINAR FOOTER BUDIBASE Y ESTILO PIE STRIPE */
+.free-footer {
+    display: none !important;
+}
+
+div[data-name="ctPieGeneral"]>div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--stripe-white);
+    border-top: solid 1px var(--stripe-border);
+    padding: 10px 0;
+    color: var(--stripe-text-subtle);
+    font-size: 0.9em;
+}
+
+/* 5. ÁREA DE CONTENIDO (Minimalismo Stripe) */
+.main-content-area {
+    background-color: var(--stripe-bg-light) !important;
+}
+
+div[data-name*="ctCuerpo"]>div {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px !important;
+    padding-top: 20px;
+}
+
+/* Contenedores de menú y contenido con sombras suaves */
+div[data-name*="ctMenu"]>div {
+    width: 30%;
+    background-color: var(--stripe-white) !important;
+    border: 1px solid var(--stripe-border);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(60, 66, 87, 0.03);
+}
+
+div[data-name*="ctContenido"]>div {
+    width: 68%;
+    background-color: var(--stripe-white) !important;
+    border: 1px solid var(--stripe-border);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 5px rgba(60, 66, 87, 0.03);
+}
+
+/* Elementos de menú */
+div[data-name*="menu"]>div {
+    margin-bottom: 4px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+div[data-name*="selec"]>div {
+    background-color: var(--stripe-white) !important;
+    color: var(--stripe-purple) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+div[data-name*="selec"] i, 
+div[data-name*="selec"] a {
+    color: var(--stripe-purple) !important;
+    font-weight: 600;
+}
+
+/* 6. CABECERA / NAVEGACIÓN */
+.nav-wrapper {
+    background: var(--stripe-white) !important;
+    border-bottom: 1px solid var(--stripe-border) !important;
+}
+
+.link a {
+    color: var(--stripe-text-subtle) !important;
+    font-weight: 500 !important;
+}
+
+.link a:hover {
+    color: var(--stripe-text-dark) !important;
+}
+
+/* 7. BOTONES (Estilo Stripe: Redondeados y con elevación) */
+.spectrum-Button {
+    background-color: var(--stripe-purple) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    border: none !important;
+    font-weight: 600 !important;
+    padding: 8px 16px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s, background-color 0.15s, box-shadow 0.15s !important;
+}
+
+.spectrum-Button:hover {
+    background-color: var(--stripe-purple-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.spectrum-Button:active {
+    transform: translateY(0);
+}
+
+/* 8. INPUTS */
+.spectrum-Textfield-input {
+    border: 1px solid var(--stripe-border) !important;
+    border-radius: 8px !important;
+    padding: 8px 12px !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+.spectrum-Textfield-input:focus {
+    border-color: var(--stripe-purple) !important;
+    box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.2) !important;
+}
+
+/* 9. CARDS */
+.spectrum-Card {
+    background: var(--stripe-white) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: var(--stripe-shadow) !important;
+}
+
+.spectrum-Card:hover {
+    box-shadow: 0 15px 35px rgba(60, 66, 87, 0.08), 0 5px 15px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* 10. ESTADO ACTIVO */
+.active {
+    color: var(--stripe-purple) !important;
+    font-weight: 600 !important;
+}
+
+/* 11. TABLAS */
+.cell.highlighted {
+    background-color: rgba(99, 91, 255, 0.1) !important;
+    color: var(--stripe-purple) !important;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    div[data-name*="col1"]>div {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    div[data-name*="show"] {
+        display: flex !important;
+    }
+
+    div[data-name*="hidden"]>div {
+        display: none !important;
+    }
+
+    div[data-name*="collapse"]>div {
+        flex-direction: column !important;
+    }
+}
