@@ -52,7 +52,7 @@ div[data-name*="center"]>div {
 }
 
 div[data-name="ctPieGeneral"] {
-    /* Es recomendable que el padre tenga una posición definida        aunque el hijo sea fixed, para evitar solapamientos extraños */
+    /* Es recomendable que el padre tenga una posición definida aunque el hijo sea fixed, para evitar solapamientos extraños */
     position: relative;
 }
 
@@ -275,7 +275,7 @@ div[data-name*="xl"]>button {
 
 /* 13. TABLAS */
 .cell.highlighted{
-  backgorund-color: var(--jira-blue);
+  background-color: var(--jira-blue);
   --cell-background: var(--jira-blue) !important;
   color: white;
 }
