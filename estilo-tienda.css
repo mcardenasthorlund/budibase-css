@@ -1,0 +1,56 @@
+
+  .main, .spectrum-Card-container, .links, .spectrum-Button, .spectrum-Heading,
+  #side-panel-container{
+    font-family: serif;
+  }
+  .free-footer{
+    display: none !important;
+  }
+
+  .main-content-area{
+    background: url(https://ideasypruebas2.es/cursos/IFCT0211/fondo-tienda.png);
+    background-position-x: right;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+  }
+  .nav-wrapper{
+    background-color: #fefefe !important;
+    border-bottom: solid 1px #eee !important;
+  }
+
+  .spectrum-Avatar{
+    display:none !important;
+  }
+  .nav-wrapper  .ph-caret-down{
+    display: none !important
+  }
+  .main-wrapper{
+    background-color: #fff;
+  }
+
+  .spectrum-Card {
+    background: #ffffff;
+background: linear-gradient(153deg,rgba(255, 255, 255, 1) 50%, rgba(249, 184, 15, .5) 100%);
+  }
+   .spectrum-Card-title{
+    color: #0e853f;
+     
+  }
+  .spectrum-Card-coverPhoto{
+  background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .spectrum-Button:hover{
+    background-color: #0e853f;
+  }
+
+  .links{
+    justify-content: center !important;
+  }
+
+  .active{
+    background-color: #0e853f !important;
+    color: white !important;
+  }
+

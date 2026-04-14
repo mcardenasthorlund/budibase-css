@@ -1,0 +1,301 @@
+
+/* 1. IMPORTACIÓN DE FUENTE (Inter es el estándar Jira) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. VARIABLES DE COLOR JIRA */
+:root {
+    --jira-blue: #0052CC;
+    --jira-blue-hover: #0065FF;
+    --jira-text: #172B4D;
+    --jira-subtle: #6B778C;
+    --jira-border: #DFE1E6;
+    --jira-bg: #F4F5F7;
+    --jira-active-bg: #DEEBFF;
+    --jira-active-text: #0747A6;
+}
+
+/* 3. TIPOGRAFÍA GLOBAL */
+.main,
+.spectrum-Card-container,
+.links,
+.spectrum-Button,
+.spectrum-Heading,
+#side-panel-container,
+.spectrum-FieldLabel,
+.spectrum-Textfield-input,
+body,
+.spectrum-Form-item {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    color: var(--jira-text);
+}
+
+div[data-name="titulo"] {
+    color: #0052CC;
+}
+
+div[data-name*="negrita"] {
+    font-weight: bold;
+}
+
+div[data-name*="xs"]>div {
+    font-size: 0.7em !important;
+}
+
+div[data-name*="center"],
+div[data-name*="center"]>div {
+    text-align: center;
+}
+
+/* 4. ELIMINAR FOOTER BUDIBASE */
+.free-footer {
+    display: none !important;
+}
+
+div[data-name="ctPieGeneral"] {
+    /* Es recomendable que el padre tenga una posición definida        aunque el hijo sea fixed, para evitar solapamientos extraños */
+    position: relative;
+}
+
+/* Selecciona el div que está dentro de ctPieGeneral */
+div[data-name="ctPieGeneral"]>div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Para que ocupe todo el ancho inferior */
+    z-index: 999;
+    /* Para asegurar que esté por encima de otros elementos */
+    color: #999;
+    border-top: solid 1px #0065FF;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 5. ÁREA DE CONTENIDO (Mantenemos tu fondo pero con tonos Jira) */
+.main-content-area {
+    background: url(https://ideasypruebas2.es/cursos/IFCT0211/fondo-tickets.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-color: var(--jira-bg) !important;
+    background-size: cover;
+}
+
+div[data-name*="ctCuerpo"]>div {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px !important;
+}
+
+div[data-name*="ctMenu"]>div {
+    width: 30%;
+    background-color: white !important;
+    border: dashed 1px #0052CC;
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 50px;
+}
+
+div[data-name*="menu"]>div {
+    margin-bottom: -10px;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+div[data-name*="show"] {
+    display: none !important;
+}
+
+div[data-name*="selec"]>div {
+    background-color: var(--jira-blue);
+    color: white;
+}
+
+div[data-name*="selec"] i {
+    color: white !important;
+}
+
+div[data-name*="selec"] a {
+    color: white;
+}
+
+div[data-name*="selec"] a:hover {
+    color: white !important;
+}
+
+div[data-name*="ctContenido"]>div {
+    width: 68%;
+    background-color: white !important;
+    border: dashed 1px #0052CC;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* 6. CABECERA / NAVEGACIÓN */
+.nav-wrapper {
+    background: white !important;
+    /* Jira suele usar cabeceras blancas o azul muy oscuro */
+    border-bottom: 1px solid var(--jira-border) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.nav-wrapper .ph-caret-down {
+    display: none !important;
+}
+
+.link a {
+    color: var(--jira-subtle) !important;
+    font-weight: 500 !important;
+    transition: color 0.2s;
+}
+
+.link a:hover {
+    color: var(--jira-blue) !important;
+}
+
+.spectrum-Avatar {
+    display: none !important;
+}
+
+/* Icono de menu colapsible */
+div[data-name*="icono-menu"] > i {
+    font-size: 2em;
+    margin-left: 10px;
+    color: var(--jira-blue) !important;
+}
+
+/* 7. BOTONES (Azul Jira con Texto Blanco) */
+.spectrum-Button {
+    background-color: var(--jira-blue) !important;
+    color: white !important;
+    /* Fuerza el texto a blanco */
+    border-radius: 3px !important;
+    border: none !important;
+    font-weight: 500 !important;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Texto de los botones (asegurando que los spans internos también sean blancos) */
+.spectrum-Button-label,
+.spectrum-Button label {
+    color: white !important;
+}
+
+/* Efecto Hover: Azul más oscuro */
+.spectrum-Button:hover {
+    background-color: #0040A3 !important;
+    /* Un tono más oscuro que el azul estándar */
+    color: white !important;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 82, 204, 0.2) !important;
+}
+
+/* Efecto Active (al hacer clic) */
+.spectrum-Button:active {
+    background-color: #0747A6 !important;
+    transform: translateY(1px);
+}
+
+div[data-name*="xl"]>button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* 8. INPUTS */
+.spectrum-Textfield-input {
+    font-weight: 400 !important;
+    border: 2px solid var(--jira-border) !important;
+    border-radius: 3px !important;
+}
+
+.spectrum-Textfield-input:focus {
+    border-color: var(--jira-blue) !important;
+}
+
+.spectrum-FieldLabel {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 9. CARDS (Estilo Ticket de Jira) */
+.spectrum-Card {
+    background: #ffffff !important;
+    border: 1px solid var(--jira-border) !important;
+    border-radius: 3px !important;
+    box-shadow: 0 1px 1px rgba(9, 30, 66, 0.25) !important;
+    transition: box-shadow 0.2s;
+}
+
+.spectrum-Card:hover {
+    box-shadow: 0 4px 8px -2px rgba(9, 30, 66, 0.25) !important;
+    background: #FAFBFC !important;
+}
+
+.spectrum-Card-title {
+    color: var(--jira-text) !important;
+    font-weight: 600 !important;
+}
+
+.spectrum-Card-coverPhoto {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 1px solid var(--jira-border);
+}
+
+/* 10. ESTADO ACTIVO (Menú) */
+.active {
+    background-color: var(--jira-active-bg) !important;
+    color: var(--jira-active-text) !important;
+    border-radius: 3px;
+    font-weight: 600 !important;
+}
+
+.links {
+    justify-content: center !important;
+    gap: 10px;
+}
+
+/* 11. DIALOGOS */
+.spectrum-Dialog {
+    background-color: #fff;
+}
+
+.spectrum-Dialog-content {
+    font-size: 1.2em;
+}
+
+/* 12. DESPLEGABLES */
+.spectrum-Menu-item.placeholder{
+  font-weight: bold;
+}
+
+/* 13. TABLAS */
+.cell.highlighted{
+  backgorund-color: var(--jira-blue);
+  --cell-background: var(--jira-blue) !important;
+  color: white;
+}
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    div[data-name*="col1"]>div {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    div[data-name*="show"] {
+        display: flex !important;
+    }
+
+    div[data-name*="hidden"]>div {
+        display: none !important;
+    }
+
+    div[data-name*="collapse"]>div {
+        flex-direction: column !important;
+    }
+}
+

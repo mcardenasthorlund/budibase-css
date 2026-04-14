@@ -1,0 +1,10 @@
+# Ignorar todo por defecto
+*
+
+# Permitir archivos de configuración y documentación esenciales
+!README.md
+!LICENSE
+!.gitignore
+
+# Permitir únicamente archivos con extensión .css
+!*.css
