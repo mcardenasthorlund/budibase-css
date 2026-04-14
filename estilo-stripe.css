@@ -1,4 +1,4 @@
-/* 1. IMPORTACIÓN DE FUENTE (Inter es muy cercana a la tipografía de Stripe) */
+/* 1. IMPORTACIÓN DE FUENTE */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* 2. VARIABLES DE COLOR STRIPE */
@@ -48,9 +48,13 @@ div[data-name*="center"]>div {
     text-align: center;
 }
 
-/* 4. ELIMINAR FOOTER BUDIBASE Y ESTILO PIE STRIPE */
+/* 4. ELIMINAR FOOTER BUDIBASE Y ESTILO PIE */
 .free-footer {
     display: none !important;
+}
+
+div[data-name="ctPieGeneral"] {
+    position: relative;
 }
 
 div[data-name="ctPieGeneral"]>div {
@@ -64,11 +68,14 @@ div[data-name="ctPieGeneral"]>div {
     padding: 10px 0;
     color: var(--stripe-text-subtle);
     font-size: 0.9em;
+    font-weight: bold;
 }
 
-/* 5. ÁREA DE CONTENIDO (Minimalismo Stripe) */
+/* 5. ÁREA DE CONTENIDO */
 .main-content-area {
     background-color: var(--stripe-bg-light) !important;
+    /* Opcional: Gradiente sutil estilo Stripe */
+    background: radial-gradient(circle at top right, #f7fafc, #ffffff) !important;
 }
 
 div[data-name*="ctCuerpo"]>div {
@@ -79,7 +86,6 @@ div[data-name*="ctCuerpo"]>div {
     padding-top: 20px;
 }
 
-/* Contenedores de menú y contenido con sombras suaves */
 div[data-name*="ctMenu"]>div {
     width: 30%;
     background-color: var(--stripe-white) !important;
@@ -98,11 +104,15 @@ div[data-name*="ctContenido"]>div {
     box-shadow: 0 2px 5px rgba(60, 66, 87, 0.03);
 }
 
-/* Elementos de menú */
 div[data-name*="menu"]>div {
     margin-bottom: 4px;
     border-radius: 6px;
+    padding: 6px;
     transition: all 0.2s;
+}
+
+div[data-name*="show"] {
+    display: none !important;
 }
 
 div[data-name*="selec"]>div {
@@ -117,22 +127,43 @@ div[data-name*="selec"] a {
     font-weight: 600;
 }
 
+div[data-name*="selec"] a:hover {
+    color: var(--stripe-purple-hover) !important;
+}
+
 /* 6. CABECERA / NAVEGACIÓN */
 .nav-wrapper {
     background: var(--stripe-white) !important;
     border-bottom: 1px solid var(--stripe-border) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.nav-wrapper .ph-caret-down {
+    display: none !important;
 }
 
 .link a {
     color: var(--stripe-text-subtle) !important;
     font-weight: 500 !important;
+    transition: color 0.2s;
 }
 
 .link a:hover {
     color: var(--stripe-text-dark) !important;
 }
 
-/* 7. BOTONES (Estilo Stripe: Redondeados y con elevación) */
+.spectrum-Avatar {
+    display: none !important;
+}
+
+/* Icono de menu colapsible */
+div[data-name*="icono-menu"] > i {
+    font-size: 2em;
+    margin-left: 10px;
+    color: var(--stripe-purple) !important;
+}
+
+/* 7. BOTONES */
 .spectrum-Button {
     background-color: var(--stripe-purple) !important;
     color: white !important;
@@ -142,6 +173,14 @@ div[data-name*="selec"] a {
     padding: 8px 16px !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     transition: transform 0.15s, background-color 0.15s, box-shadow 0.15s !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spectrum-Button-label,
+.spectrum-Button label {
+    color: white !important;
 }
 
 .spectrum-Button:hover {
@@ -152,6 +191,11 @@ div[data-name*="selec"] a {
 
 .spectrum-Button:active {
     transform: translateY(0);
+}
+
+div[data-name*="xl"]>button {
+    width: 100%;
+    margin-top: 12px;
 }
 
 /* 8. INPUTS */
@@ -168,16 +212,35 @@ div[data-name*="selec"] a {
     box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.2) !important;
 }
 
+.spectrum-FieldLabel {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--stripe-text-subtle);
+}
+
 /* 9. CARDS */
 .spectrum-Card {
     background: var(--stripe-white) !important;
     border: none !important;
     border-radius: 8px !important;
     box-shadow: var(--stripe-shadow) !important;
+    transition: box-shadow 0.2s;
 }
 
 .spectrum-Card:hover {
     box-shadow: 0 15px 35px rgba(60, 66, 87, 0.08), 0 5px 15px rgba(0, 0, 0, 0.06) !important;
+}
+
+.spectrum-Card-title {
+    color: var(--stripe-text-dark) !important;
+    font-weight: 600 !important;
+}
+
+.spectrum-Card-coverPhoto {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 1px solid var(--stripe-border);
 }
 
 /* 10. ESTADO ACTIVO */
@@ -186,9 +249,31 @@ div[data-name*="selec"] a {
     font-weight: 600 !important;
 }
 
-/* 11. TABLAS */
+.links {
+    justify-content: center !important;
+    gap: 10px;
+}
+
+/* 11. DIALOGOS */
+.spectrum-Dialog {
+    background-color: var(--stripe-white);
+    border-radius: 12px;
+}
+
+.spectrum-Dialog-content {
+    font-size: 1.1em;
+    color: var(--stripe-text-subtle);
+}
+
+/* 12. DESPLEGABLES */
+.spectrum-Menu-item.placeholder {
+    font-weight: 600;
+}
+
+/* 13. TABLAS */
 .cell.highlighted {
     background-color: rgba(99, 91, 255, 0.1) !important;
+    --cell-background: rgba(99, 91, 255, 0.1) !important;
     color: var(--stripe-purple) !important;
 }
 
