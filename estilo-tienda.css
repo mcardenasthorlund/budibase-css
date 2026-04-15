@@ -1,5 +1,29 @@
 
-  .main, .spectrum-Card-container, .links, .spectrum-Button, .spectrum-Heading,
+  /**
+ * ESTILO TIENDA PARA BUDIBASE
+ * -----------------------------------------------------------------------------
+ * Esta hoja de estilos proporciona una estética cálida y comercial, ideal para
+ * catálogos de productos o aplicaciones de comercio electrónico.
+ * 
+ * 1. CARACTERÍSTICAS VISUALES
+ * - Tipografía: Utiliza fuentes serif para un toque más clásico y elegante.
+ * - Colores: Predominio del verde (#0e853f) para estados activos y botones.
+ * - Cards: Fondo con gradiente sutil y títulos en verde.
+ * - Fondo: Imagen temática de tienda en la zona inferior derecha.
+ * 
+ * 2. BLOQUES DE CLASES MODIFICADOS (Spectrum UI)
+ * - .spectrum-Button: Cambio de color al pasar el ratón (hover) a verde.
+ * - .spectrum-Card: Tarjetas personalizadas con degradado y ajuste de imagen.
+ * - .nav-wrapper: Cabecera clara con borde inferior suave.
+ * - .active: Resalta la opción seleccionada con fondo verde y texto blanco.
+ * 
+ * 3. ELEMENTOS OCULTOS
+ * - Elimina el pie de página de Budibase (.free-footer).
+ * - Oculta el avatar del usuario y los iconos de flecha en la navegación.
+ * -----------------------------------------------------------------------------
+ */
+
+.main, .spectrum-Card-container, .links, .spectrum-Button, .spectrum-Heading,
   #side-panel-container{
     font-family: serif;
   }

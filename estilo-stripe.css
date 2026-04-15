@@ -1,3 +1,37 @@
+/**
+ * ESTILO STRIPE PARA BUDIBASE
+ * -----------------------------------------------------------------------------
+ * Esta hoja de estilos transforma la interfaz estándar de Budibase en una
+ * estética limpia y profesional inspirada en el panel de control de Stripe.
+ * 
+ * 1. CONVENCIÓN DE NOMBRES (data-name)
+ * Para aplicar estos estilos, asigne los siguientes nombres a sus componentes:
+ * - "titulo": Aplica el color púrpura corporativo y peso negrita.
+ * - "*negrita*": Cualquier componente cuyo nombre contenga "negrita" se verá en semi-bold.
+ * - "*xs*": Reduce el tamaño de fuente y suaviza el color (ideal para subtítulos).
+ * - "*center*": Centra el contenido y el texto.
+ * - "ctPieGeneral": Contenedor para el pie de página fijo.
+ * - "*ctCuerpo*": Contenedor principal (centrado y con ancho máximo de 1100px).
+ * - "*ctMenu*": Contenedor lateral para menús de navegación.
+ * - "*ctContenido*": Contenedor principal de datos/formularios al lado del menú.
+ * - "*menu*": Elementos individuales de una lista de navegación.
+ * - "*selec*": Estado activo/seleccionado para elementos de menú.
+ * - "*xl*": Aplicado a botones para que ocupen el 100% del ancho.
+ * - "*icono-menu*": Para el icono de menú colapsable en móvil.
+ * 
+ * 2. BLOQUES DE CLASES MODIFICADOS (Spectrum UI)
+ * - .spectrum-Button: Botones con bordes redondeados (8px), sombras suaves y hover animado.
+ * - .spectrum-Card: Tarjetas con sombra elevada (estilo Stripe) y bordes limpios.
+ * - .spectrum-Textfield-input: Inputs con foco resaltado en púrpura y sombra interna leve.
+ * - .nav-wrapper: Cabecera con fondo blanco puro y borde inferior sutil.
+ * 
+ * 3. TOKENS DE DISEÑO (Variables :root)
+ * - --stripe-purple: #635BFF (Color primario)
+ * - --stripe-bg-light: #f7fafc (Fondo de aplicación)
+ * - --stripe-shadow: Sombra característica de elevación.
+ * -----------------------------------------------------------------------------
+ */
+
 /* 1. IMPORTACIÓN DE FUENTE */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 

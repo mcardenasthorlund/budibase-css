@@ -1,4 +1,38 @@
 
+/**
+ * ESTILO JIRA PARA BUDIBASE
+ * -----------------------------------------------------------------------------
+ * Esta hoja de estilos adapta la interfaz de Budibase al lenguaje visual de
+ * Atlassian Jira, enfocándose en la gestión de tickets y entornos de trabajo.
+ * 
+ * 1. CONVENCIÓN DE NOMBRES (data-name)
+ * Para aplicar estos estilos, asigne los siguientes nombres a sus componentes:
+ * - "titulo": Aplica el azul corporativo de Jira (#0052CC).
+ * - "*negrita*": Fuerza el peso de fuente a bold.
+ * - "*xs*": Reduce considerablemente el tamaño de fuente (0.7em).
+ * - "*center*": Centra el contenido y el texto del componente.
+ * - "ctPieGeneral": Contenedor para el pie de página fijo con borde superior azul.
+ * - "*ctCuerpo*": Área principal de la app (centrada, máx. 1200px).
+ * - "*ctMenu*": Contenedor lateral con borde punteado azul (estilo sidebar Jira).
+ * - "*ctContenido*": Contenedor principal de datos al lado del menú.
+ * - "*menu*": Elementos individuales de listas de navegación.
+ * - "*selec*": Estado seleccionado (fondo azul, texto blanco).
+ * - "*xl*": Botones que ocupan el 100% del ancho del contenedor.
+ * - "*icono-menu*": Icono de navegación para dispositivos móviles.
+ * 
+ * 2. BLOQUES DE CLASES MODIFICADOS (Spectrum UI)
+ * - .spectrum-Button: Bordes rectos (3px), azul sólido y transiciones suaves.
+ * - .spectrum-Card: Estilo "Ticket" con borde gris sutil y sombra ligera.
+ * - .spectrum-Textfield-input: Bordes de 2px con resalte azul en foco.
+ * - .nav-wrapper: Cabecera blanca limpia con sombra inferior de elevación.
+ * 
+ * 3. TOKENS DE DISEÑO (Variables :root)
+ * - --jira-blue: #0052CC (Color de marca y acciones)
+ * - --jira-bg: #F4F5F7 (Fondo gris neutro de Jira)
+ * - --jira-border: #DFE1E6 (Color de bordes y separadores)
+ * -----------------------------------------------------------------------------
+ */
+
 /* 1. IMPORTACIÓN DE FUENTE (Inter es el estándar Jira) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
