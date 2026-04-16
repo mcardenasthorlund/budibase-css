@@ -1,0 +1,322 @@
+/**
+ * ESTILO AMAZON PRIME PARA BUDIBASE
+ * -----------------------------------------------------------------------------
+ * Esta hoja de estilos adapta la interfaz de Budibase al lenguaje visual de
+ * Amazon Prime Video, con fondos oscuros, acentos cyan y bordes redondeados.
+ * 
+ * 1. CONVENCIÓN DE NOMBRES (data-name)
+ * Para aplicar estos estilos, asigne los siguientes nombres a sus componentes:
+ * - "titulo": Aplica el azul cyan de Prime (#00A8E1).
+ * - "*negrita*": Fuerza el peso de fuente a bold.
+ * - "*xs*": Reduce considerablemente el tamaño de fuente (0.7em).
+ * - "*center*": Centra el contenido y el texto del componente.
+ * - "ctPieGeneral": Contenedor para el pie de página fijo con borde superior cyan.
+ * - "*ctCuerpo*": Área principal de la app (centrada, máx. 1200px).
+ * - "*ctMenu*": Contenedor lateral con fondo oscuro Prime.
+ * - "*ctContenido*": Contenedor principal de datos.
+ * - "*menu*": Elementos individuales de listas de navegación.
+ * - "*selec*": Estado seleccionado (resalte cyan).
+ * - "*xl*": Botones que ocupan el 100% del ancho del contenedor.
+ * - "*icono-menu*": Icono de navegación para dispositivos móviles.
+ * 
+ * 2. BLOQUES DE CLASES MODIFICADOS (Spectrum UI)
+ * - .spectrum-Button: Estilo redondeado "pill", azul cyan y texto oscuro.
+ * - .spectrum-Card: Estilo "Poster" con sombras suaves y fondo oscuro.
+ * - .spectrum-Textfield-input: Fondos oscuros con resalte cyan en foco.
+ * 
+ * 3. TOKENS DE DISEÑO (Variables :root)
+ * - --prime-blue: #00A8E1 (Color de acento Prime)
+ * - --prime-dark: #1A242F (Fondos de contenedores)
+ * - --prime-bg: #0F171E (Fondo general de la App)
+ * -----------------------------------------------------------------------------
+ */
+
+/* 1. IMPORTACIÓN DE FUENTE */
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
+
+/* 2. VARIABLES DE COLOR PRIME */
+:root {
+    --prime-blue: #00A8E1;
+    --prime-blue-hover: #008fbf;
+    --prime-text: #FFFFFF;
+    --prime-subtle: #8197A4;
+    --prime-border: #303F4B;
+    --prime-bg: #0F171E;
+    --prime-dark: #1A242F;
+    --prime-active-bg: rgba(0, 168, 225, 0.2);
+}
+
+/* 3. TIPOGRAFÍA GLOBAL */
+.main,
+.spectrum-Card-container,
+.links,
+.spectrum-Button,
+.spectrum-Heading,
+#side-panel-container,
+.spectrum-FieldLabel,
+.spectrum-Textfield-input,
+body,
+.spectrum-Form-item {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    color: var(--prime-text);
+}
+
+div[data-name="titulo"] {
+    color: var(--prime-blue);
+}
+
+div[data-name*="negrita"] {
+    font-weight: bold;
+}
+
+div[data-name*="xs"]>div {
+    font-size: 0.7em !important;
+}
+
+div[data-name*="center"],
+div[data-name*="center"]>div {
+    text-align: center;
+}
+
+/* 4. ELIMINAR FOOTER BUDIBASE */
+.free-footer {
+    display: none !important;
+}
+
+div[data-name="ctPieGeneral"] {
+    position: relative;
+}
+
+div[data-name="ctPieGeneral"]>div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--prime-dark) !important;
+    color: var(--prime-subtle);
+    border-top: solid 2px var(--prime-blue);
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+/* 5. ÁREA DE CONTENIDO (Fondo oscuro cinemático) */
+.main-content-area {
+    background-color: var(--prime-bg) !important;
+}
+
+div[data-name*="ctCuerpo"]>div {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px !important;
+}
+
+div[data-name*="ctMenu"]>div {
+    width: 25%;
+    background-color: var(--prime-dark) !important;
+    border: 1px solid var(--prime-border);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+div[data-name*="menu"]>div {
+    margin-bottom: 5px;
+    border-radius: 4px;
+    padding: 8px;
+    transition: background 0.3s;
+}
+
+div[data-name*="show"] {
+    display: none !important;
+}
+
+div[data-name*="selec"]>div {
+    background-color: var(--prime-active-bg);
+    border-left: 4px solid var(--prime-blue);
+    color: white;
+}
+
+div[data-name*="selec"] i {
+    color: var(--prime-blue) !important;
+}
+
+div[data-name*="selec"] a {
+    color: white;
+    font-weight: bold;
+}
+
+div[data-name*="ctContenido"]>div {
+    width: 73%;
+    background-color: var(--prime-dark) !important;
+    border: 1px solid var(--prime-border);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* 6. CABECERA / NAVEGACIÓN (Top Bar Negra) */
+.nav-wrapper {
+    background: #000000 !important;
+    border-bottom: 1px solid var(--prime-border) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5) !important;
+}
+
+.nav-wrapper .ph-caret-down {
+    display: none !important;
+}
+
+.link a {
+    color: var(--prime-subtle) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+}
+
+.link a:hover {
+    color: var(--prime-text) !important;
+}
+
+.spectrum-Avatar {
+    display: none !important;
+}
+
+/* Icono de menu colapsible */
+div[data-name*="icono-menu"] > i {
+    font-size: 2em;
+    margin-left: 10px;
+    color: var(--prime-blue) !important;
+}
+
+/* 7. BOTONES (Cyan Prime con bordes redondeados) */
+.spectrum-Button {
+    background-color: var(--prime-blue) !important;
+    color: #000000 !important;
+    border-radius: 20px !important;
+    border: none !important;
+    font-weight: 700 !important;
+    padding: 0 25px !important;
+    transition: all 0.2s ease !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spectrum-Button-label,
+.spectrum-Button label {
+    color: #000000 !important;
+}
+
+.spectrum-Button:hover {
+    background-color: var(--prime-blue-hover) !important;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 168, 225, 0.4) !important;
+    transform: translateY(-1px);
+}
+
+.spectrum-Button:active {
+    transform: translateY(0);
+}
+
+div[data-name*="xl"]>button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* 8. INPUTS */
+.spectrum-Textfield-input {
+    background-color: #252e39 !important;
+    border: 1px solid var(--prime-border) !important;
+    border-radius: 4px !important;
+    color: white !important;
+}
+
+.spectrum-Textfield-input:focus {
+    border-color: var(--prime-blue) !important;
+    box-shadow: 0 0 5px var(--prime-blue) !important;
+}
+
+.spectrum-FieldLabel {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--prime-subtle);
+}
+
+/* 9. CARDS (Estilo Miniatura Prime) */
+.spectrum-Card {
+    background: var(--prime-dark) !important;
+    border: 1px solid var(--prime-border) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3) !important;
+    transition: all 0.3s ease !important;
+    overflow: hidden;
+}
+
+.spectrum-Card:hover {
+    transform: scale(1.03);
+    border-color: var(--prime-blue) !important;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4) !important;
+}
+
+.spectrum-Card-title {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.spectrum-Card-coverPhoto {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 1px solid var(--prime-border);
+}
+
+/* 10. ESTADO ACTIVO */
+.active {
+    background-color: var(--prime-active-bg) !important;
+    border-bottom: 3px solid var(--prime-blue) !important;
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+.links {
+    justify-content: center !important;
+    gap: 15px;
+}
+
+/* 11. DIALOGOS */
+.spectrum-Dialog {
+    background-color: var(--prime-dark);
+    border: 1px solid var(--prime-border);
+}
+
+.spectrum-Dialog-content {
+    color: white;
+}
+
+/* 12. TABLAS */
+.cell.highlighted {
+  background-color: var(--prime-active-bg);
+  --cell-background: var(--prime-active-bg) !important;
+  color: var(--prime-blue);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    div[data-name*="col1"]>div {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    div[data-name*="show"] {
+        display: flex !important;
+    }
+
+    div[data-name*="hidden"]>div {
+        display: none !important;
+    }
+
+    div[data-name*="collapse"]>div {
+        flex-direction: column !important;
+    }
+}
