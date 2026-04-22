@@ -1,0 +1,217 @@
+/**
+ * ESTILO THE TIMES PARA BUDIBASE
+ * -----------------------------------------------------------------------------
+ * Esta hoja de estilos adapta la interfaz de Budibase a una estética de diario
+ * tradicional, inspirada en The Times.
+ * 
+ * 1. CONVENCIÓN DE NOMBRES (data-name)
+ * - "titulo": Tipografía Serif elegante, negro profundo (#1D1D1B).
+ * - "*negrita*": Peso de fuente bold.
+ * - "*xs*": Fuente muy pequeña (0.75em), estilo nota al pie.
+ * - "*center*": Centra el contenido (típico de portadas).
+ * - "ctPieGeneral": Pie de página con borde superior doble o fino negro.
+ * - "*ctCuerpo*": Área principal máxima de 1100px para facilitar la lectura.
+ * - "*ctMenu*": Columna lateral con separadores verticales finos.
+ * - "*ctContenido*": Área de noticias/artículo.
+ * - "*xl*": Botones sobrios a ancho completo.
+ */
+
+/* 1. IMPORTACIÓN DE FUENTES (Serif para autoridad, Sans para legibilidad) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap');
+
+/* 2. VARIABLES DE DISEÑO "THE TIMES" */
+:root {
+    --times-black: #1D1D1B;
+    --times-gray-dark: #333333;
+    --times-gray-medium: #666666;
+    --times-border: #DCDCDC;
+    --times-bg-paper: #FFFFFF;
+    --times-accent: #000000;
+    --times-serif-header: 'Playfair Display', serif;
+    --times-serif-body: 'Lora', serif;
+    --times-sans: 'Source Sans Pro', sans-serif;
+}
+
+/* 3. TIPOGRAFÍA GLOBAL */
+body, .main, .spectrum-Textfield-input, .spectrum-FieldLabel, .spectrum-Form-item {
+    font-family: var(--times-sans) !important;
+    color: var(--times-gray-dark);
+    background-color: var(--times-bg-paper);
+}
+
+.spectrum-Heading, 
+div[data-name="titulo"],
+.spectrum-Card-title {
+    font-family: var(--times-serif-header) !important;
+    letter-spacing: -0.02em;
+}
+
+div[data-name="titulo"] {
+    color: var(--times-black);
+    border-bottom: 2px solid var(--times-black);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+div[data-name*="negrita"] {
+    font-weight: bold;
+}
+
+div[data-name*="xs"]>div {
+    font-size: 0.75em !important;
+    color: var(--times-gray-medium);
+}
+
+div[data-name*="center"],
+div[data-name*="center"]>div {
+    text-align: center;
+}
+
+/* 4. ELIMINAR FOOTER BUDIBASE */
+.free-footer {
+    display: none !important;
+}
+
+/* Pie de página estilo editorial */
+div[data-name="ctPieGeneral"]>div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: white;
+    border-top: 1px solid var(--times-black);
+    padding: 10px 0;
+    font-family: var(--times-sans);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* 5. ÁREA DE CONTENIDO */
+.main-content-area {
+    background-color: var(--times-bg-paper) !important;
+}
+
+div[data-name*="ctCuerpo"]>div {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px !important;
+}
+
+div[data-name*="ctMenu"]>div {
+    width: 25%;
+    background-color: transparent !important;
+    border-right: 1px solid var(--times-border);
+    padding-right: 20px;
+}
+
+div[data-name*="ctContenido"]>div {
+    width: 72%;
+    background-color: transparent !important;
+    padding-left: 20px;
+}
+
+/* Estilo de enlaces en el menú */
+div[data-name*="menu"]>div {
+    border-bottom: 1px solid var(--times-border);
+    padding: 12px 0;
+    transition: all 0.2s;
+}
+
+div[data-name*="selec"]>div {
+    background-color: transparent !important;
+    border-bottom: 2px solid var(--times-black);
+}
+
+div[data-name*="selec"] a, 
+div[data-name*="selec"] span {
+    color: var(--times-black) !important;
+    font-weight: bold;
+}
+
+/* 6. CABECERA */
+.nav-wrapper {
+    background: white !important;
+    border-bottom: 3px double var(--times-black) !important;
+    padding: 20px 0 !important;
+}
+
+.link a {
+    color: var(--times-black) !important;
+    font-family: var(--times-sans);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* 7. BOTONES (Rectos y Negros) */
+.spectrum-Button {
+    background-color: var(--times-black) !important;
+    color: white !important;
+    border-radius: 0px !important; /* Esquinas rectas */
+    border: 1px solid var(--times-black) !important;
+    font-family: var(--times-sans);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+}
+
+.spectrum-Button:hover {
+    background-color: transparent !important;
+    color: var(--times-black) !important;
+}
+
+/* 8. INPUTS */
+.spectrum-Textfield-input {
+    border: 0 !important;
+    border-bottom: 1px solid var(--times-border) !important;
+    border-radius: 0 !important;
+}
+
+.spectrum-Textfield-input:focus {
+    border-bottom: 2px solid var(--times-black) !important;
+}
+
+/* 9. CARDS (Estilo Noticia) */
+.spectrum-Card {
+    background: white !important;
+    border: none !important;
+    border-bottom: 1px solid var(--times-border) !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    padding-bottom: 20px;
+}
+
+.spectrum-Card:hover {
+    background: #fdfdfd !important;
+}
+
+.spectrum-Card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+/* 10. TABLAS */
+.cell.highlighted {
+    background-color: #f5f5f5;
+    --cell-background: #f5f5f5 !important;
+    color: var(--times-black);
+    font-weight: bold;
+}
+
+/* 11. AJUSTES MÓVILES */
+@media (max-width: 768px) {
+    div[data-name*="ctMenu"]>div,
+    div[data-name*="ctContenido"]>div {
+        width: 100% !important;
+        border: none;
+        padding: 10px;
+    }
+}
