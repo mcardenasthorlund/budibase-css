@@ -1,0 +1,284 @@
+/**
+ * ESTILO YOGA PARA BUDIBASE
+ * -----------------------------------------------------------------------------
+ * Esta hoja de estilos adapta la interfaz de Budibase a una estética Zen y 
+ * equilibrada, inspirada en la naturaleza y el bienestar.
+ * 
+ * 1. CONVENCIÓN DE NOMBRES (data-name)
+ * - "titulo": Aplica el verde oliva profundo (#4A5D4E).
+ * - "*negrita*": Fuerza el peso de fuente a bold.
+ * - "*xs*": Reduce el tamaño de fuente (0.7em).
+ * - "*center*": Centra el contenido.
+ * - "ctPieGeneral": Pie de página con borde superior en tono arena.
+ * - "*ctCuerpo*": Área principal centrada (máx. 1200px).
+ * - "*ctMenu*": Contenedor lateral con borde suave orgánico.
+ * - "*ctContenido*": Contenedor principal de datos.
+ * - "*selec*": Estado seleccionado (fondo verde suave, texto blanco).
+ * 
+ * 2. BLOQUES DE CLASES MODIFICADOS
+ * - .spectrum-Button: Bordes redondeados (25px) y tonos tierra.
+ * - .spectrum-Card: Bordes suaves y sombras leves orgánicas.
+ */
+
+/* 1. IMPORTACIÓN DE FUENTE (Quicksand es redonda y amable) */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* 2. VARIABLES DE COLOR YOGA */
+:root {
+    --yoga-primary: #4A5D4E;        /* Verde oliva oscuro (tierra/hojas) */
+    --yoga-primary-hover: #5D7262;
+    --yoga-accent: #D4A373;         /* Terracota/Madera suave */
+    --yoga-text: #2F3E33;           /* Texto carbón vegetal */
+    --yoga-subtle: #8A9A5B;         /* Verde salvia */
+    --yoga-border: #E0E5D8;         /* Borde piedra clara */
+    --yoga-bg: #F9F7F2;             /* Fondo crema/arena */
+    --yoga-active-bg: #E9EDC9;      /* Fondo activo verde muy claro */
+    --yoga-active-text: #4A5D4E;
+}
+
+/* 3. TIPOGRAFÍA GLOBAL */
+.main,
+.spectrum-Card-container,
+.links,
+.spectrum-Button,
+.spectrum-Heading,
+#side-panel-container,
+.spectrum-FieldLabel,
+.spectrum-Textfield-input,
+body,
+.spectrum-Form-item {
+    font-family: 'Quicksand', -apple-system, sans-serif !important;
+    color: var(--yoga-text);
+}
+
+div[data-name="titulo"] {
+    color: var(--yoga-primary);
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+div[data-name*="negrita"] {
+    font-weight: bold;
+}
+
+div[data-name*="xs"]>div {
+    font-size: 0.7em !important;
+}
+
+div[data-name*="center"],
+div[data-name*="center"]>div {
+    text-align: center;
+}
+
+/* 4. ELIMINAR FOOTER BUDIBASE */
+.free-footer {
+    display: none !important;
+}
+
+div[data-name="ctPieGeneral"] {
+    position: relative;
+}
+
+div[data-name="ctPieGeneral"]>div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    border-top: solid 2px var(--yoga-accent);
+    padding: 10px;
+    font-weight: 500;
+    color: var(--yoga-primary);
+}
+
+/* 5. ÁREA DE CONTENIDO */
+.main-content-area {
+    background-color: var(--yoga-bg) !important;
+    background-image: radial-gradient(var(--yoga-border) 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+}
+
+div[data-name*="ctCuerpo"]>div {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px !important;
+}
+
+div[data-name*="ctMenu"]>div {
+    width: 30%;
+    background-color: white !important;
+    border: solid 1px var(--yoga-border);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+div[data-name*="menu"]>div {
+    margin-bottom: 5px;
+    border-radius: 8px;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+div[data-name*="show"] {
+    display: none !important;
+}
+
+div[data-name*="selec"]>div {
+    background-color: var(--yoga-active-bg);
+    color: var(--yoga-primary);
+}
+
+div[data-name*="selec"] i {
+    color: var(--yoga-primary) !important;
+}
+
+div[data-name*="selec"] a {
+    color: var(--yoga-primary);
+    font-weight: 600;
+}
+
+div[data-name*="selec"] a:hover {
+    color: var(--yoga-primary) !important;
+}
+
+div[data-name*="ctContenido"]>div {
+    width: 68%;
+    background-color: white !important;
+    border: solid 1px var(--yoga-border);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+/* 6. CABECERA / NAVEGACIÓN */
+.nav-wrapper {
+    background: white !important;
+    border-bottom: 1px solid var(--yoga-border) !important;
+    padding: 10px 0;
+}
+
+.link a {
+    color: var(--yoga-subtle) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+}
+
+.link a:hover {
+    color: var(--yoga-primary) !important;
+}
+
+/* Icono de menu colapsible */
+div[data-name*="icono-menu"] > i {
+    font-size: 2em;
+    margin-left: 10px;
+    color: var(--yoga-primary) !important;
+}
+
+/* 7. BOTONES (Estilo Orgánico) */
+.spectrum-Button {
+    background-color: var(--yoga-primary) !important;
+    color: white !important;
+    border-radius: 25px !important; /* Bordes redondeados Zen */
+    border: none !important;
+    font-weight: 600 !important;
+    padding: 0 25px !important;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spectrum-Button-label {
+    color: white !important;
+}
+
+.spectrum-Button:hover {
+    background-color: var(--yoga-primary-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(74, 93, 78, 0.2) !important;
+    cursor: pointer;
+}
+
+.spectrum-Button:active {
+    transform: translateY(0);
+}
+
+div[data-name*="xl"]>button {
+    width: 100%;
+    height: 45px;
+}
+
+/* 8. INPUTS */
+.spectrum-Textfield-input {
+    border: 1px solid var(--yoga-border) !important;
+    border-radius: 10px !important;
+    background-color: #FAFAFA !important;
+    padding: 8px 12px !important;
+}
+
+.spectrum-Textfield-input:focus {
+    border-color: var(--yoga-accent) !important;
+    background-color: white !important;
+    box-shadow: 0 0 0 2px rgba(212, 163, 115, 0.1) !important;
+}
+
+.spectrum-FieldLabel {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--yoga-primary);
+}
+
+/* 9. CARDS (Estilo Orgánico) */
+.spectrum-Card {
+    background: #ffffff !important;
+    border: 1px solid var(--yoga-border) !important;
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02) !important;
+}
+
+.spectrum-Card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+}
+
+.spectrum-Card-title {
+    color: var(--yoga-primary) !important;
+    font-weight: 700 !important;
+}
+
+/* 10. ESTADO ACTIVO (Menú) */
+.active {
+    background-color: var(--yoga-active-bg) !important;
+    color: var(--yoga-primary) !important;
+    border-radius: 8px;
+    font-weight: 700 !important;
+}
+
+/* 11. TABLAS */
+.cell.highlighted {
+    background-color: var(--yoga-active-bg);
+    --cell-background: var(--yoga-active-bg) !important;
+    color: var(--yoga-primary);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    div[data-name*="ctMenu"]>div,
+    div[data-name*="ctContenido"]>div {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    
+    div[data-name*="collapse"]>div {
+        flex-direction: column !important;
+    }
+}
