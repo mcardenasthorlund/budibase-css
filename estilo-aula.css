@@ -83,8 +83,12 @@ div[data-name="ctPieGeneral"]>div {
 
 /* 5. ÁREA DE CONTENIDO (Limpio y claro) */
 .main-content-area {
+    
+    background: url('https://ideasypruebas2.es/cursos/IFCT0211/campus/fondo-campus.png');
     background-color: var(--aula-bg) !important;
-    background-image: none !important; /* Eliminamos el fondo de tickets de Jira */
+    background-position-x: right;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
 }
 
 div[data-name*="ctCuerpo"]>div {
