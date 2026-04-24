@@ -1,0 +1,205 @@
+/**
+ * ESTILO AULA PARA BUDIBASE
+ * -----------------------------------------------------------------------------
+ * Adaptación para plataformas de e-learning y gestión académica.
+ * Basado en la estructura de estilo-jira.css con estética educativa.
+ */
+
+/* 1. IMPORTACIÓN DE FUENTES (Inter y Poppins para un toque más moderno) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+/* 2. VARIABLES DE COLOR AULA (Azules vibrantes y fondos limpios) */
+:root {
+    --aula-blue: #1A73E8;          /* Azul educativo estilo Google Classroom */
+    --aula-blue-hover: #1557B0;
+    --aula-text: #202124;
+    --aula-subtle: #5F6368;
+    --aula-border: #DADCE0;
+    --aula-bg: #F8F9FA;
+    --aula-active-bg: #E8F0FE;
+    --aula-active-text: #174EA6;
+    --aula-radius: 8px;            /* Bordes más redondeados y amigables */
+}
+
+/* 3. TIPOGRAFÍA GLOBAL */
+.main,
+.spectrum-Card-container,
+.links,
+.spectrum-Button,
+.spectrum-Heading,
+#side-panel-container,
+.spectrum-FieldLabel,
+.spectrum-Textfield-input,
+body,
+.spectrum-Form-item {
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    color: var(--aula-text);
+}
+
+/* Títulos con Poppins para mayor claridad */
+.spectrum-Heading, 
+div[data-name="titulo"] {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--aula-blue);
+    letter-spacing: -0.02em;
+}
+
+div[data-name*="negrita"] {
+    font-weight: 600;
+}
+
+div[data-name*="xs"]>div {
+    font-size: 0.75em !important;
+    color: var(--aula-subtle);
+}
+
+div[data-name*="center"],
+div[data-name*="center"]>div {
+    text-align: center;
+}
+
+/* 4. ELIMINAR FOOTER BUDIBASE */
+.free-footer {
+    display: none !important;
+}
+
+div[data-name="ctPieGeneral"] {
+    position: relative;
+}
+
+div[data-name="ctPieGeneral"]>div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: white;
+    border-top: solid 1px var(--aula-border);
+    padding: 10px 0;
+    font-weight: 500;
+    color: var(--aula-subtle);
+    font-size: 0.9em;
+}
+
+/* 5. ÁREA DE CONTENIDO (Limpio y claro) */
+.main-content-area {
+    background-color: var(--aula-bg) !important;
+    background-image: none !important; /* Eliminamos el fondo de tickets de Jira */
+}
+
+div[data-name*="ctCuerpo"]>div {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1280px !important;
+}
+
+/* Contenedores con bordes suaves en lugar de punteados */
+div[data-name*="ctMenu"]>div {
+    width: 28%;
+    background-color: white !important;
+    border: 1px solid var(--aula-border);
+    border-radius: var(--aula-radius);
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+div[data-name*="ctContenido"]>div {
+    width: 70%;
+    background-color: white !important;
+    border: 1px solid var(--aula-border);
+    border-radius: var(--aula-radius);
+    padding: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+div[data-name*="menu"]>div {
+    margin-bottom: 4px;
+    border-radius: var(--aula-radius);
+    padding: 8px 12px;
+    transition: background 0.2s;
+}
+
+div[data-name*="selec"]>div {
+    background-color: var(--aula-active-bg);
+    color: var(--aula-active-text);
+    font-weight: 600;
+}
+
+div[data-name*="selec"] i,
+div[data-name*="selec"] a {
+    color: var(--aula-active-text) !important;
+}
+
+/* 6. CABECERA / NAVEGACIÓN */
+.nav-wrapper {
+    background: white !important;
+    border-bottom: 1px solid var(--aula-border) !important;
+}
+
+.link a {
+    color: var(--aula-subtle) !important;
+    font-weight: 500 !important;
+}
+
+.link a:hover {
+    color: var(--aula-blue) !important;
+    background: var(--aula-active-bg);
+    border-radius: 4px;
+}
+
+/* 7. BOTONES (Estilo redondeado y moderno) */
+.spectrum-Button {
+    background-color: var(--aula-blue) !important;
+    color: white !important;
+    border-radius: 24px !important; /* Más redondeados para elearning */
+    padding: 0 20px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+.spectrum-Button:hover {
+    background-color: var(--aula-blue-hover) !important;
+    box-shadow: 0 4px 6px rgba(26, 115, 232, 0.2) !important;
+}
+
+/* 8. INPUTS */
+.spectrum-Textfield-input {
+    border: 1px solid var(--aula-border) !important;
+    border-radius: 4px !important;
+    padding: 8px 12px !important;
+}
+
+.spectrum-Textfield-input:focus {
+    border-color: var(--aula-blue) !important;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2) !important;
+}
+
+/* 9. CARDS (Diseño de curso/lección) */
+.spectrum-Card {
+    background: #ffffff !important;
+    border: 1px solid var(--aula-border) !important;
+    border-radius: var(--aula-radius) !important;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+.spectrum-Card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+/* 10. TABLAS Y COMPONENTES */
+.cell.highlighted {
+    background-color: var(--aula-active-bg);
+    color: var(--aula-active-text);
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 768px) {
+    div[data-name*="ctMenu"]>div,
+    div[data-name*="ctContenido"]>div {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+}
