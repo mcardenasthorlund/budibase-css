@@ -202,4 +202,21 @@ div[data-name*="selec"] a {
         width: 100% !important;
         margin-bottom: 20px;
     }
+
+    div[data-name*="col1"]>div {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    div[data-name*="show"] {
+        display: flex !important;
+    }
+
+    div[data-name*="hidden"]>div {
+        display: none !important;
+    }
+
+    div[data-name*="collapse"]>div {
+        flex-direction: column !important;
+    }
 }
