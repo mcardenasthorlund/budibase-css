@@ -89,6 +89,8 @@ div[data-name="ctPieGeneral"]>div {
     background-position-x: right;
     background-position-y: bottom;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 div[data-name*="ctCuerpo"]>div {
