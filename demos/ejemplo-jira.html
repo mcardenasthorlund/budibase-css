@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Estilo JIRA - Budibase</title>
+    <link rel="stylesheet" href="../estilo-jira.css">
+    <style>
+        body { margin: 0; padding: 0; }
+    </style>
+</head>
+<body class="main-content-area">
+    <header class="nav-wrapper">
+        <div style="display: flex; align-items: center; padding: 0 20px; height: 60px; max-width: 1280px; margin: 0 auto;">
+            <div class="spectrum-Heading spectrum-Heading--sizeL" style="margin-right: 40px;">Portal JIRA</div>
+            <nav class="links" style="display: flex; gap: 20px;">
+                <div class="link"><a href="#">Inicio</a></div>
+                <div class="link"><a href="#">Explorar</a></div>
+                <div class="link"><a href="#">Ayuda</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <div data-name="ctCuerpo" style="padding: 40px 0;">
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div data-name="ctMenu">
+                <div>
+                    <div class="spectrum-Heading spectrum-Heading--sizeM" data-name="titulo">Menú Principal</div>
+                    <div style="margin-top: 20px;">
+                        <div data-name="menu selec"><div>Dashboard</div></div>
+                        <div data-name="menu"><div>Proyectos</div></div>
+                        <div data-name="menu"><div>Configuración</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-name="ctContenido">
+                <div>
+                    <div class="spectrum-Heading spectrum-Heading--sizeXL" data-name="titulo">Panel de Control JIRA</div>
+                    <p>Vista previa de componentes Budibase con el tema personalizado.</p>
+                    
+                    <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="spectrum-Card">
+                            <div style="padding: 20px;">
+                                <div class="spectrum-Heading spectrum-Heading--sizeS" data-name="negrita">Elemento Destacado</div>
+                                <p style="font-size: 0.9em; opacity: 0.8;">Descripción detallada del componente tipo tarjeta.</p>
+                                <button class="spectrum-Button">Acción Principal</button>
+                            </div>
+                        </div>
+                        <div class="spectrum-Card">
+                            <div style="padding: 20px;">
+                                <div class="spectrum-Heading spectrum-Heading--sizeS" data-name="negrita">Resumen Estadístico</div>
+                                <p style="font-size: 0.9em; opacity: 0.8;">Datos visualizados con el estilo del tema.</p>
+                                <button class="spectrum-Button">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <div class="spectrum-Heading spectrum-Heading--sizeM" data-name="titulo">Entrada de Datos</div>
+                        <div class="spectrum-Form-item" style="margin-top: 15px;">
+                            <label class="spectrum-FieldLabel">Campo de Texto</label>
+                            <input type="text" class="spectrum-Textfield-input" placeholder="Escribe aquí..." style="width: 100%;">
+                        </div>
+                        <div style="margin-top: 20px; text-align: right;">
+                            <button class="spectrum-Button">Guardar Cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-name="ctPieGeneral">
+        <div>
+            <div style="max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between;">
+                <span>&copy; 2026 Demo JIRA</span>
+                <span>Budibase Custom CSS</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

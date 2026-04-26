@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Estilo Aula - Budibase</title>
+    <!-- Referencia a la hoja de estilos. Cambiar esta línea para probar otros estilos -->
+    <link rel="stylesheet" href="../estilo-aula.css">
+    <style>
+        /* Estilos adicionales solo para la visualización de la demo fuera de Budibase */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .demo-controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 10000;
+            border-radius: 8px;
+            font-family: sans-serif;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body class="main-content-area">
+
+    <!-- Simulación de Navegación Budibase -->
+    <header class="nav-wrapper">
+        <div style="display: flex; align-items: center; padding: 0 20px; height: 60px; max-width: 1280px; margin: 0 auto;">
+            <div class="spectrum-Heading spectrum-Heading--sizeL" style="margin-right: 40px;">Campus Aula</div>
+            <nav class="links" style="display: flex; gap: 20px;">
+                <div class="link"><a href="#">Mis Cursos</a></div>
+                <div class="link"><a href="#">Biblioteca</a></div>
+                <div class="link"><a href="#">Certificados</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Simulación de Cuerpo de App (ctCuerpo) -->
+    <div data-name="ctCuerpo" style="padding: 40px 0;">
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+            
+            <!-- Barra Lateral (ctMenu) -->
+            <div data-name="ctMenu">
+                <div>
+                    <div class="spectrum-Heading spectrum-Heading--sizeM" data-name="titulo">Navegación</div>
+                    <div style="margin-top: 20px;">
+                        <div data-name="menu selec">
+                            <div><i class="p-icon"></i> Dashboard</div>
+                        </div>
+                        <div data-name="menu">
+                            <div><i class="p-icon"></i> Mi Perfil</div>
+                        </div>
+                        <div data-name="menu">
+                            <div><i class="p-icon"></i> Mensajes</div>
+                        </div>
+                        <hr style="border: 0; border-top: 1px solid var(--aula-border); margin: 15px 0;">
+                        <div data-name="xs">
+                            <div>Último acceso: Hoy, 10:45</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido Principal (ctContenido) -->
+            <div data-name="ctContenido">
+                <div>
+                    <div class="spectrum-Heading spectrum-Heading--sizeXL" data-name="titulo">Bienvenido al Curso de Desarrollo</div>
+                    <p>Utiliza los componentes de abajo para ver cómo se aplican los estilos educativos.</p>
+                    
+                    <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <!-- Tarjetas (spectrum-Card) -->
+                        <div class="spectrum-Card">
+                            <div style="padding: 20px;">
+                                <div class="spectrum-Heading spectrum-Heading--sizeS" data-name="negrita">Módulo 1: Introducción</div>
+                                <p style="font-size: 0.9em; color: var(--aula-subtle);">Fundamentos del diseño de interfaces educativas.</p>
+                                <button class="spectrum-Button">Empezar Lectura</button>
+                            </div>
+                        </div>
+                        
+                        <div class="spectrum-Card">
+                            <div style="padding: 20px;">
+                                <div class="spectrum-Heading spectrum-Heading--sizeS" data-name="negrita">Módulo 2: Estilos CSS</div>
+                                <p style="font-size: 0.9em; color: var(--aula-subtle);">Personalización avanzada de componentes.</p>
+                                <button class="spectrum-Button">Ver Video</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formularios -->
+                    <div style="margin-top: 40px;">
+                        <div class="spectrum-Heading spectrum-Heading--sizeM" data-name="titulo">Formulario de Inscripción</div>
+                        <div class="spectrum-Form-item" style="margin-top: 15px;">
+                            <label class="spectrum-FieldLabel">Nombre Completo</label>
+                            <input type="text" class="spectrum-Textfield-input" placeholder="Ej. Juan Pérez" style="width: 100%;">
+                        </div>
+                        <div class="spectrum-Form-item" style="margin-top: 15px;">
+                            <label class="spectrum-FieldLabel">Correo Institucional</label>
+                            <input type="email" class="spectrum-Textfield-input" placeholder="usuario@aula.com" style="width: 100%;">
+                        </div>
+                        <div style="margin-top: 20px; text-align: right;">
+                            <button class="spectrum-Button">Enviar Solicitud</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página (ctPieGeneral) -->
+    <div data-name="ctPieGeneral">
+        <div>
+            <div style="max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between;">
+                <span>&copy; 2026 Plataforma Educativa Aula</span>
+                <span>Soporte Técnico | Privacidad</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Estilo LinkedIn - Budibase</title>
+    <link rel="stylesheet" href="../hoja-linkedin.css">
+    <style>
+        /* Estilos adicionales para la demo (simulando el layout de Budibase) */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .nav-wrapper {
+            height: 52px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            justify-content: space-between;
+        }
+        .main-content-area {
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+        .flex-container {
+            display: flex;
+            gap: 24px;
+        }
+        /* Simulación de componentes Spectrum */
+        .spectrum-Button {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .spectrum-Card {
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .spectrum-Textfield-input {
+            width: 100%;
+            height: 32px;
+            box-sizing: border-box;
+            padding: 0 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabecera simulada -->
+    <header class="nav-wrapper">
+        <div data-name="titulo">LinkedIn Clone</div>
+        <div class="links">
+            <span class="link"><a href="#">Inicio</a></span>
+            <span class="link"><a href="#">Mi Red</a></span>
+            <span class="link"><a href="#">Empleos</a></span>
+        </div>
+    </header>
+
+    <main class="main-content-area">
+        <div data-name="ctCuerpo">
+            <div class="flex-container" data-name="collapse">
+                
+                <!-- Barra lateral -->
+                <aside data-name="ctMenu">
+                    <div>
+                        <div data-name="menu selec">
+                            <div><a href="#">Perfil Principal</a></div>
+                        </div>
+                        <div data-name="menu">
+                            <div><a href="#">Mis Elementos</a></div>
+                        </div>
+                        <div data-name="menu">
+                            <div><a href="#">Grupos</a></div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Feed principal -->
+                <section data-name="ctContenido">
+                    <div>
+                        <div class="spectrum-Card">
+                            <h2 data-name="titulo">Nueva Publicación</h2>
+                            <input type="text" class="spectrum-Textfield-input" placeholder="¿Sobre qué quieres hablar?">
+                            <div data-name="center" style="margin-top: 15px;">
+                                <button class="spectrum-Button">Publicar ahora</button>
+                            </div>
+                        </div>
+
+                        <div class="spectrum-Card">
+                            <div data-name="xs">Publicado por Juan Pérez • 2h</div>
+                            <h3 class="spectrum-Card-title">Anuncio Importante</h3>
+                            <p>Estamos muy contentos de anunciar el lanzamiento de nuestra nueva herramienta de diseño basada en Budibase.</p>
+                            <button class="spectrum-Button spectrum-Button--secondary">Me gusta</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página móvil -->
+    <footer data-name="ctPieGeneral">
+        <div data-name="center">
+            <span>Home</span> | <span>Red</span> | <span>Post</span> | <span>Notificaciones</span>
+        </div>
+    </footer>
+
+</body>
+</html>
