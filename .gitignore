@@ -6,5 +6,7 @@
 !LICENSE
 !.gitignore
 
-# Permitir únicamente archivos con extensión .css
+# Permitir únicamente archivos con extensión .css y demos HTML
 !*.css
+!demos/
+!demos/*.html

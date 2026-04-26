@@ -1,0 +1,264 @@
+/**
+ * ESTILO LINKEDIN PARA BUDIBASE
+ * -----------------------------------------------------------------------------
+ * Esta hoja de estilos adapta la interfaz de Budibase al lenguaje visual de
+ * LinkedIn, priorizando la claridad, los tonos neutros y el azul corporativo.
+ * 
+ * 1. CONVENCIÓN DE NOMBRES (data-name)
+ * - "titulo": Azul LinkedIn (#0a66c2) y negrita.
+ * - "*negrita*": Peso de fuente 600.
+ * - "*xs*": Texto pequeño y gris (estilo metadatos de LinkedIn).
+ * - "*center*": Centrado de contenido.
+ * - "ctPieGeneral": Pie de página fijo estilo barra inferior móvil.
+ * - "*ctCuerpo*": Área principal centrada (máx. 1128px - estándar LinkedIn).
+ * - "*ctMenu*": Contenedor lateral (estilo perfil/accesos rápidos).
+ * - "*ctContenido*": Feed principal de datos.
+ * - "*menu*": Elementos de lista de navegación lateral.
+ * - "*selec*": Estado activo con borde izquierdo azul.
+ * - "*xl*": Botones de ancho completo.
+ * - "*icono-menu*": Icono para navegación móvil.
+ * 
+ * 2. BLOQUES DE CLASES MODIFICADOS (Spectrum UI)
+ * - .spectrum-Button: Botones redondeados (16px+), sin borde y colores sólidos.
+ * - .spectrum-Card: Tarjetas blancas con borde fino y sombra muy sutil.
+ * - .spectrum-Textfield-input: Inputs con foco azul LinkedIn.
+ * - .nav-wrapper: Cabecera blanca con iconos oscuros.
+ * -----------------------------------------------------------------------------
+ */
+
+/* 1. IMPORTACIÓN DE FUENTE */
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
+
+/* 2. VARIABLES DE COLOR LINKEDIN */
+:root {
+    --li-blue: #0a66c2;
+    --li-blue-hover: #004182;
+    --li-bg: #f3f2ef;
+    --li-text-main: rgba(0, 0, 0, 0.9);
+    --li-text-subtle: rgba(0, 0, 0, 0.6);
+    --li-border: #ebebeb;
+    --li-white: #ffffff;
+    --li-radius: 8px;
+    --li-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* 3. TIPOGRAFÍA GLOBAL */
+.main,
+.spectrum-Card-container,
+.links,
+.spectrum-Button,
+.spectrum-Heading,
+#side-panel-container,
+.spectrum-FieldLabel,
+.spectrum-Textfield-input,
+body,
+.spectrum-Form-item {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+    color: var(--li-text-main);
+}
+
+div[data-name="titulo"] {
+    color: var(--li-blue);
+    font-weight: 600;
+}
+
+div[data-name*="negrita"] {
+    font-weight: 600;
+}
+
+div[data-name*="xs"]>div {
+    font-size: 0.8rem !important;
+    color: var(--li-text-subtle);
+}
+
+div[data-name*="center"],
+div[data-name*="center"]>div {
+    text-align: center;
+}
+
+/* 4. ELIMINAR FOOTER BUDIBASE */
+.free-footer {
+    display: none !important;
+}
+
+div[data-name="ctPieGeneral"] {
+    position: relative;
+}
+
+div[data-name="ctPieGeneral"]>div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--li-white);
+    border-top: solid 1px var(--li-border);
+    padding: 12px 0;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+}
+
+/* 5. ÁREA DE CONTENIDO */
+.main-content-area {
+    background-color: var(--li-bg) !important;
+}
+
+div[data-name*="ctCuerpo"]>div {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1128px !important; /* Ancho estándar del feed de LinkedIn */
+    padding-top: 24px;
+}
+
+div[data-name*="ctMenu"]>div {
+    width: 25%;
+    background-color: var(--li-white) !important;
+    border: 1px solid var(--li-border);
+    border-radius: var(--li-radius);
+    overflow: hidden;
+}
+
+div[data-name*="ctContenido"]>div {
+    width: 73%;
+}
+
+div[data-name*="menu"]>div {
+    padding: 12px 16px;
+    transition: background-color 0.2s;
+    border-left: 4px solid transparent;
+}
+
+div[data-name*="menu"]>div:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+div[data-name*="selec"]>div {
+    border-left-color: var(--li-blue);
+    background-color: rgba(10, 102, 194, 0.05);
+}
+
+div[data-name*="selec"] a,
+div[data-name*="selec"] i {
+    color: var(--li-blue) !important;
+    font-weight: 600;
+}
+
+/* 6. CABECERA / NAVEGACIÓN */
+.nav-wrapper {
+    background: var(--li-white) !important;
+    border-bottom: 1px solid var(--li-border) !important;
+}
+
+.link a {
+    color: var(--li-text-subtle) !important;
+    font-size: 14px;
+    font-weight: 400 !important;
+}
+
+.link a:hover {
+    color: var(--li-text-main) !important;
+}
+
+.spectrum-Avatar {
+    border: 1px solid var(--li-border);
+}
+
+/* Icono de menu colapsible */
+div[data-name*="icono-menu"] > i {
+    font-size: 1.5rem;
+    color: var(--li-text-subtle) !important;
+}
+
+/* 7. BOTONES (Estilo Píldora de LinkedIn) */
+.spectrum-Button {
+    background-color: var(--li-blue) !important;
+    color: white !important;
+    border-radius: 24px !important; /* Estilo muy redondeado */
+    border: none !important;
+    font-weight: 600 !important;
+    padding: 6px 16px !important;
+    transition: background-color 0.2s !important;
+}
+
+.spectrum-Button-label {
+    color: white !important;
+}
+
+.spectrum-Button:hover {
+    background-color: var(--li-blue-hover) !important;
+}
+
+/* Botones secundarios (Outlined) - se activan si Budibase usa variantes */
+.spectrum-Button--secondary {
+    background-color: transparent !important;
+    color: var(--li-blue) !important;
+    border: 1px solid var(--li-blue) !important;
+}
+
+div[data-name*="xl"]>button {
+    width: 100%;
+}
+
+/* 8. INPUTS */
+.spectrum-Textfield-input {
+    background-color: #eef3f8 !important; /* Gris azulado suave de LinkedIn */
+    border: 1px solid transparent !important;
+    border-radius: 4px !important;
+    transition: background-color 0.2s, border-color 0.2s !important;
+}
+
+.spectrum-Textfield-input:focus {
+    background-color: var(--li-white) !important;
+    border-color: var(--li-blue) !important;
+    box-shadow: 0 0 0 1px var(--li-blue) !important;
+}
+
+/* 9. CARDS */
+.spectrum-Card {
+    background: var(--li-white) !important;
+    border: 1px solid var(--li-border) !important;
+    border-radius: var(--li-radius) !important;
+    box-shadow: none !important;
+    overflow: hidden;
+}
+
+.spectrum-Card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+.spectrum-Card-title {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+
+/* 10. TABLAS */
+.cell.highlighted {
+    background-color: rgba(10, 102, 194, 0.1) !important;
+    color: var(--li-blue) !important;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    div[data-name*="col1"]>div {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    div[data-name*="ctMenu"]>div,
+    div[data-name*="ctContenido"]>div {
+        width: 100% !important;
+    }
+
+    div[data-name*="show"] {
+        display: flex !important;
+    }
+
+    div[data-name*="hidden"]>div {
+        display: none !important;
+    }
+
+    div[data-name*="collapse"]>div {
+        flex-direction: column !important;
+    }
+}
