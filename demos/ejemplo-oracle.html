@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Estilo Oracle Redwood - Budibase</title>
+    <link rel="stylesheet" href="../estilo-oracle.css">
+    <style>
+        body { margin: 0; padding: 0; }
+    </style>
+</head>
+<body class="main-content-area">
+    <header class="nav-wrapper">
+        <div style="display: flex; align-items: center; padding: 0 20px; height: 60px; max-width: 1280px; margin: 0 auto;">
+            <div class="spectrum-Heading spectrum-Heading--sizeL" style="margin-right: 40px; color: white;">Oracle Cloud</div>
+            <nav class="links" style="display: flex; gap: 20px;">
+                <div class="link"><a href="#">Productos</a></div>
+                <div class="link"><a href="#">Soluciones</a></div>
+                <div class="link"><a href="#">Soporte</a></div>
+            </nav>
+        </div>
+    </header>
+
+    <div data-name="ctCuerpo" style="padding: 40px 0;">
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div data-name="ctMenu">
+                <div>
+                    <div class="spectrum-Heading spectrum-Heading--sizeM" data-name="titulo">Navegación</div>
+                    <div style="margin-top: 20px;">
+                        <div data-name="menu selec"><div>Panel de Inicio</div></div>
+                        <div data-name="menu"><div>Instancias Compute</div></div>
+                        <div data-name="menu"><div>Almacenamiento</div></div>
+                        <div data-name="menu"><div>Redes Virtuales</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-name="ctContenido">
+                <div>
+                    <div class="spectrum-Heading spectrum-Heading--sizeXL" data-name="titulo">Bienvenido a Oracle Redwood</div>
+                    <p>Esta interfaz emula la calidez y modernidad del sistema de diseño Redwood utilizado en las aplicaciones Oracle de última generación.</p>
+                    
+                    <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="spectrum-Card">
+                            <div style="padding: 24px;">
+                                <div class="spectrum-Heading spectrum-Heading--sizeS" data-name="negrita">Gestión de Datos</div>
+                                <p style="font-size: 0.9em; margin-bottom: 20px;">Componente de tarjeta optimizado para la legibilidad y el enfoque en el contenido.</p>
+                                <button class="spectrum-Button">Configurar</button>
+                            </div>
+                        </div>
+                        <div class="spectrum-Card">
+                            <div style="padding: 24px;">
+                                <div class="spectrum-Heading spectrum-Heading--sizeS" data-name="negrita">Análisis Avanzado</div>
+                                <p style="font-size: 0.9em; margin-bottom: 20px;">Visualización de métricas con el lenguaje visual cálido de Redwood.</p>
+                                <button class="spectrum-Button">Ver Reporte</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <div class="spectrum-Heading spectrum-Heading--sizeM" data-name="titulo">Formulario de Registro</div>
+                        <div class="spectrum-Form-item" style="margin-top: 15px;">
+                            <label class="spectrum-FieldLabel">Nombre de la Instancia</label>
+                            <input type="text" class="spectrum-Textfield-input" placeholder="p.ej. prod-db-01" style="width: 100%;">
+                        </div>
+                        <div style="margin-top: 20px; text-align: right;">
+                            <button class="spectrum-Button">Crear Recurso</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-name="ctPieGeneral">
+        <div>
+            <div style="max-width: 1280px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between;">
+                <span>&copy; 2026 Oracle Redwood Demo</span>
+                <span>Budibase Custom Theme</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

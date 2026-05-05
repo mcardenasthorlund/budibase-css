@@ -1,0 +1,299 @@
+/**
+ * ESTILO ORACLE REDWOOD PARA BUDIBASE
+ * -----------------------------------------------------------------------------
+ * Esta hoja de estilos emula el sistema de diseño Redwood de Oracle,
+ * caracterizado por tonos terrosos, calidez y una tipografía moderna.
+ * 
+ * 1. CONVENCIÓN DE NOMBRES (data-name)
+ * Para aplicar estos estilos, asigne los siguientes nombres a sus componentes:
+ * - "titulo": Aplica el rojo corporativo Redwood (#C74634).
+ * - "*negrita*": Fuerza el peso de fuente a bold.
+ * - "*xs*": Reduce considerablemente el tamaño de fuente (0.7em).
+ * - "*center*": Centra el contenido y el texto del componente.
+ * - "ctPieGeneral": Contenedor para el pie de página fijo con borde superior Redwood.
+ * - "*ctCuerpo*": Área principal de la app (centrada, máx. 1200px).
+ * - "*ctMenu*": Contenedor lateral con borde sutil (estilo sidebar Oracle).
+ * - "*ctContenido*": Contenedor principal de datos al lado del menú.
+ * - "*menu*": Elementos individuales de listas de navegación.
+ * - "*selec*": Estado seleccionado (fondo Redwood, texto blanco).
+ * - "*xl*": Botones que ocupan el 100% del ancho del contenedor.
+ * - "*icono-menu*": Icono de navegación para dispositivos móviles.
+ * 
+ * 2. BLOQUES DE CLASES MODIFICADOS (Spectrum UI)
+ * - .spectrum-Button: Bordes redondeados suaves (4px), rojo Redwood y sombras sutiles.
+ * - .spectrum-Card: Estilo "Redwood" con bordes suaves y fondo ligeramente crema.
+ * - .spectrum-Textfield-input: Bordes finos con resalte naranja/rojo en foco.
+ * - .nav-wrapper: Cabecera oscura (Bark) o blanca limpia según el contexto.
+ * 
+ * 3. TOKENS DE DISEÑO (Variables :root)
+ * - --oracle-red: #C74634 (Color principal de marca)
+ * - --oracle-bg: #F9F8F7 (Fondo Sand/Crema sutil)
+ * - --oracle-text: #312D2A (Color Bark para texto)
+ * - --oracle-border: #E0E0E0 (Color de bordes)
+ * -----------------------------------------------------------------------------
+ */
+
+/* 1. IMPORTACIÓN DE FUENTE */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* 2. VARIABLES DE COLOR ORACLE REDWOOD */
+:root {
+    --oracle-red: #C74634;
+    --oracle-red-hover: #A63A2B;
+    --oracle-text: #312D2A;
+    --oracle-subtle: #605B57;
+    --oracle-border: #E0E0E0;
+    --oracle-bg: #F9F8F7;
+    --oracle-active-bg: #F2EFEA;
+    --oracle-active-text: #C74634;
+    --oracle-white: #FFFFFF;
+}
+
+/* 3. TIPOGRAFÍA GLOBAL */
+.main,
+.spectrum-Card-container,
+.links,
+.spectrum-Button,
+.spectrum-Heading,
+#side-panel-container,
+.spectrum-FieldLabel,
+.spectrum-Textfield-input,
+body,
+.spectrum-Form-item {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    color: var(--oracle-text);
+}
+
+div[data-name="titulo"] {
+    color: var(--oracle-red);
+}
+
+div[data-name*="negrita"] {
+    font-weight: bold;
+}
+
+div[data-name*="xs"]>div {
+    font-size: 0.7em !important;
+}
+
+div[data-name*="center"],
+div[data-name*="center"]>div {
+    text-align: center;
+}
+
+/* 4. ELIMINAR FOOTER BUDIBASE */
+.free-footer {
+    display: none !important;
+}
+
+div[data-name="ctPieGeneral"] {
+    position: relative;
+}
+
+div[data-name="ctPieGeneral"]>div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--oracle-white);
+    border-top: solid 2px var(--oracle-red);
+    padding: 10px 0;
+    font-weight: 500;
+    color: var(--oracle-text);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+/* 5. ÁREA DE CONTENIDO */
+.main-content-area {
+    background-color: var(--oracle-bg) !important;
+}
+
+div[data-name*="ctCuerpo"]>div {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px !important;
+}
+
+div[data-name*="ctMenu"]>div {
+    width: 30%;
+    background-color: var(--oracle-white) !important;
+    border: solid 1px var(--oracle-border);
+    border-radius: 8px;
+    padding: 20px;
+    padding-bottom: 50px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+div[data-name*="menu"]>div {
+    margin-bottom: 5px;
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: background-color 0.2s;
+}
+
+div[data-name*="menu"]>div:hover {
+    background-color: var(--oracle-active-bg);
+}
+
+div[data-name*="show"] {
+    display: none !important;
+}
+
+div[data-name*="selec"]>div {
+    background-color: var(--oracle-red) !important;
+    color: var(--oracle-white) !important;
+}
+
+div[data-name*="selec"] i,
+div[data-name*="selec"] a,
+div[data-name*="selec"] span {
+    color: var(--oracle-white) !important;
+}
+
+div[data-name*="ctContenido"]>div {
+    width: 68%;
+    background-color: var(--oracle-white) !important;
+    border: solid 1px var(--oracle-border);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* 6. CABECERA / NAVEGACIÓN */
+.nav-wrapper {
+    background: #312D2A !important; /* Estilo Redwood Dark Header */
+    border-bottom: 3px solid var(--oracle-red) !important;
+}
+
+.nav-wrapper .link a {
+    color: #E0E0E0 !important;
+    font-weight: 500 !important;
+}
+
+.nav-wrapper .link a:hover {
+    color: var(--oracle-white) !important;
+}
+
+.nav-wrapper .ph-caret-down {
+    display: none !important;
+}
+
+.spectrum-Avatar {
+    display: none !important;
+}
+
+/* Icono de menu colapsible */
+div[data-name*="icono-menu"] > i {
+    font-size: 2em;
+    margin-left: 10px;
+    color: var(--oracle-red) !important;
+}
+
+/* 7. BOTONES (Redwood Red) */
+.spectrum-Button {
+    background-color: var(--oracle-red) !important;
+    color: var(--oracle-white) !important;
+    border-radius: 20px !important; /* Redwood usa botones más redondeados tipo pill o suavizados */
+    border: none !important;
+    font-weight: 600 !important;
+    padding: 0 24px !important;
+    height: 40px !important;
+    transition: all 0.2s ease !important;
+}
+
+.spectrum-Button-label,
+.spectrum-Button label {
+    color: var(--oracle-white) !important;
+}
+
+.spectrum-Button:hover {
+    background-color: var(--oracle-red-hover) !important;
+    box-shadow: 0 4px 12px rgba(199, 70, 52, 0.3) !important;
+    transform: translateY(-1px);
+}
+
+.spectrum-Button:active {
+    transform: translateY(0);
+}
+
+div[data-name*="xl"]>button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* 8. INPUTS */
+.spectrum-Textfield-input {
+    background-color: #FFFFFF !important;
+    border: 1px solid var(--oracle-border) !important;
+    border-radius: 4px !important;
+    padding: 10px 15px !important;
+}
+
+.spectrum-Textfield-input:focus {
+    border-color: var(--oracle-red) !important;
+    box-shadow: 0 0 0 2px rgba(199, 70, 52, 0.1) !important;
+}
+
+.spectrum-FieldLabel {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* 9. CARDS (Estilo Redwood) */
+.spectrum-Card {
+    background: var(--oracle-white) !important;
+    border: 1px solid var(--oracle-border) !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.spectrum-Card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.spectrum-Card-title {
+    color: var(--oracle-text) !important;
+    font-weight: 700 !important;
+    font-size: 1.1em !important;
+}
+
+/* 10. ESTADO ACTIVO (Tablas/Listas) */
+.active {
+    background-color: var(--oracle-active-bg) !important;
+    color: var(--oracle-red) !important;
+    border-radius: 4px;
+    font-weight: 600 !important;
+}
+
+/* 11. TABLAS */
+.cell.highlighted {
+  background-color: var(--oracle-red);
+  --cell-background: var(--oracle-red) !important;
+  color: white;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    div[data-name*="col1"]>div {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    div[data-name*="show"] {
+        display: flex !important;
+    }
+
+    div[data-name*="hidden"]>div {
+        display: none !important;
+    }
+
+    div[data-name*="collapse"]>div {
+        flex-direction: column !important;
+    }
+}
